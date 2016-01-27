@@ -69,13 +69,15 @@ def check_cell(row, column, dir_x, dir_y):
     # if not (0 <= column + dir_x * winning_size <= table_size):
         # return 0
 
-    if column + dir_x * winning_size not in range(table_size):
+    # if column + dir_x * (winning_size) not in range(table_size):
+    if column + dir_x * (winning_size -1 ) not in range(table_size):    
         return 0
 
-    if row + dir_y * winning_size not in range(table_size):
+    # if row + dir_y * winning_size not in range(table_size):
+    if row + dir_y * winning_size -1 ) not in range(table_size):    
         return 0
 
-    for i in range(1, winning_size):
+    for i in range(1, winning_size ):
         if T[row + (i * dir_y)][column + (i * dir_x)] != cell:
             return 0
 
